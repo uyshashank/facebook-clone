@@ -1,0 +1,52 @@
+body {
+  background-color: #f0f2f5;
+}
+.fb__logo {
+  width: 300px;
+  height: 106px;
+  margin: auto;
+  width: 50%;
+}
+
+.border__line {
+  align-items: center;
+  border-bottom: 1px solid #dadde1;
+  display: flex;
+  margin: 20px 16px;
+  text-align: center;
+}
+
+.cardForm {
+  padding: 10px 15px 24px;
+  border: none;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgb(0 0 0 / 10%), 0 8px 16px rgb(0 0 0 / 10%);
+  box-sizing: border-box;
+  margin: auto;
+  width: 396px;
+  background-color: #fff;
+}
+
+.cardForm > div > input {
+  margin-top: 10px;  
+}
+
+.cardDesign{
+    margin-top: 10px;
+}
+
+.forgottenPassword{
+    margin: 10px 0;
+    color: #1877f2;
+    font-size: 14px;
+    font-weight: 400;
+}
+.createNewAccountBtn{
+    color: #fff;
+    background-color: #42b72a;
+    border: none;
+    border-radius: 6px;
+    font-size: 17px;
+    line-height: 48px;
+    padding: 0 16px;
+}

@@ -1,0 +1,27 @@
+.sidebarRow {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  cursor: pointer;
+  color: black !important;
+  text-decoration: none !important; 
+}
+.sidebarRow:hover {
+  background-color: lightgray;
+  border-radius: 10px;
+  text-decoration: none !important;
+}
+
+.sidebarRow > h4 {
+  margin-left: 20px;
+  font-weight: 600;
+  text-decoration: none !important;
+  font-size: 20px;
+}
+
+/* .sidebarRow > .MuiSvgIcon-root {
+  font-size: xx-large;
+  color: #2e61f4;
+  text-decoration: none !important;
+} */
+

@@ -1,0 +1,113 @@
+.headingTitle h2 {
+    font-size: 25px;
+    line-height: 32px;
+    text-align: center;
+    color: #1c1e21;
+    font-family: SFProDisplay-Bold, Helvetica, Arial, sans-serif;
+    font-size: 32px;
+    font-weight: 600;
+    margin-bottom: 0% !important;
+}
+
+.subHeading h4 {
+    font-size: 15px;
+    line-height: 24px;
+    text-align: center;
+    color: #606770;
+    font-family: SFProText-Regular, Helvetica, Arial, sans-serif;
+    font-weight: normal;
+    margin-bottom: 0%;
+}
+
+.LoginTitle h4 {
+    font-size: 18px;
+    line-height: 24px;
+    font-family: inherit;
+    text-align: center;
+    color: #1c1e21;
+    margin-bottom: 0%;
+}
+
+.subErrorHeading h4 {
+    font-size: 15px;
+    line-height: 24px;
+    text-align: left;
+    color: red;
+    font-family: SFProText-Regular, Helvetica, Arial, sans-serif;
+    font-weight: normal;
+    margin-bottom: 0%;
+    padding-left: 1vh;
+}
+
+.form-control {
+    padding: 0.8rem 0.75rem !important;
+}
+
+.labelFormate label {
+    margin-bottom: 4px;
+    color: #606770;
+    font-family: SFProText-Medium, Helvetica, Arial, sans-serif;
+    font-size: 15px;
+    font-weight: normal;
+    line-height: 20px;
+    margin-top: 2px;
+}
+
+.labelFormate {
+    text-align: left !important;
+    padding-left: 5vh !important;
+}
+
+.form-control-lg {
+    font-size: 1rem;
+}
+
+.para p {
+    font-family: inherit;
+    width: auto;
+    color: #0c0a0a;
+    font-size: 15px;
+    margin-bottom: 0px !important;
+    padding: 0px !important;
+}
+
+.para {
+    text-align: left !important;
+}
+
+.buttonDesign button {
+    background: none;
+    background-color: #00a400;
+    border: none;
+    border-radius: 6px;
+    box-shadow: none;
+    color: #fff;
+    font-size: 18px;
+    font-weight: 600;
+    height: 36px;
+    overflow: hidden;
+    padding: 0 32px;
+    text-shadow: none;
+}
+
+.SignDesign button {
+    background: none;
+    background-color: #1877f2;
+    border: none;
+    border-radius: 6px;
+    box-shadow: none;
+    color: #fff;
+    font-size: 18px;
+    font-weight: 600;
+    height: 36px;
+    overflow: hidden;
+    padding: 0 32px;
+    width: 332px;
+    text-shadow: none;
+}
+
+.fb__logo {
+    width: 300px;
+    height: 106px;
+  }
+  
