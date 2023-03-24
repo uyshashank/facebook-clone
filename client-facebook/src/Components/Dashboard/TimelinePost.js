@@ -6,26 +6,24 @@ import ThumbUpAltOutlinedIcon from "@mui/icons-material/ThumbUpAltOutlined";
 // import ThumbUpAltIcon from '@mui/icons-material/ThumbUpAlt';
 import ChatOutlinedIcon from "@mui/icons-material/ChatOutlined";
 import SendOutlinedIcon from "@mui/icons-material/SendOutlined";
-const TimelinePost = () => {
-  /**
-   * user avatar
-   * user name
-   * user post text
-   * user post image if
-   */
+const TimelinePost = (props) => {
   const userPostImage = `https://images.pexels.com/photos/627718/pexels-photo-627718.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1`;
-  const userData = {
-    post_owner_name: "Shashank Yenurkar",
-    post_time: "1h",
-  };
+
   return (
     <Fragment>
       <div className={"container px-0 " + styles.userpost}>
         <div className="row">
           <div className="col-10">
             <CardHeader
-              avatar={<Avatar alt="Remy" src="" />}
-              title={userData.post_owner_name}
+              avatar={
+                <Avatar
+                  src={
+                    `http://localhost:4000/public/profpics/` +
+                    props.user_profile
+                  }
+                />
+              }
+              title={props.user_name_fname + " " + props.user_name_lname}
             />
           </div>
           <div className="col-1">
@@ -40,15 +38,17 @@ const TimelinePost = () => {
         </div>
         <div className="container">
           <div className="row">
-            <div className="col-12 bg-warning">
-              <p>This is content</p>
+            <div className="col-12">
+              <p>{props.post_data}</p>
             </div>
             <div className="col-12 p-0 text-center">
-              <img
-                className={styles.testPost}
-                src={userPostImage}
-                alt="User Post"
-              />
+              {props.post_image && (
+                <img
+                  className={styles.testPost}
+                  src={userPostImage}
+                  alt="User Post"
+                />
+              )}
             </div>
           </div>
         </div>

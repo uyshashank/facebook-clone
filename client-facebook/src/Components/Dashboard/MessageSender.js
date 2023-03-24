@@ -1,3 +1,4 @@
+import styles from "./MessageSender.module.css";
 import React from "react";
 import { useState } from "react";
 import { InsertEmoticon, PhotoLibrary, Videocam } from "@mui/icons-material";
@@ -26,18 +27,18 @@ const MessageSender = (props) => {
   const handlerSubmit = (e) => {
     e.preventDefault();
     sendUserPost({
-      post_data:input,
+      post_data: input,
       post_owner: userData.userEmail,
     });
 
     setInput("");
     setImageUrl("");
   };
-  return (    
+  return (
     <>
-      <div className="messageSender">
-        <div className="messageSender__top container-fluid">
-        {userData && (
+      <div className={styles.messageSender + " container"}>
+        <div className={styles.messageSender__top}>
+          {userData && (
             <Avatar
               src={
                 userData.prof_pic.includes("avatar")
@@ -50,7 +51,7 @@ const MessageSender = (props) => {
             <input
               value={input}
               onChange={(e) => setInput(e.target.value)}
-              className="messageSender__input"
+              className={styles.messageSender__input}
               placeholder={`What's on your mind?`}
             />
             <input
@@ -63,18 +64,18 @@ const MessageSender = (props) => {
             </button>
           </form>
         </div>
-        <div className="messageSender__bottom">
-          <div className="messageSender__option">
+        <div className={styles.messageSender__bottom}>
+          <div className={styles.messageSender__option}>
             <Videocam style={{ color: "red" }} />
             <h3>Live Video</h3>
           </div>
 
-          <div className="messageSender__option">
+          <div className={styles.messageSender__option}>
             <PhotoLibrary style={{ color: "green" }} />
             <h3>Photo/Video</h3>
           </div>
 
-          <div className="messageSender__option">
+          <div className={styles.messageSender__option}>
             <InsertEmoticon style={{ color: "orange" }} />
             <h3>Feeling/Activity</h3>
           </div>

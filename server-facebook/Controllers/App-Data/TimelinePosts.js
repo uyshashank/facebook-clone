@@ -23,8 +23,10 @@ const getPosts = async (req, res) => {
   const userEmail = req.params.user_email;
   let user = await userSchema.findOne({ user_email: userEmail });  
   let user_posts = [];
+  
   for (let i = 0; i < user.posts.length; i++) {
     user_posts.push({
+      post_id:user.posts[i].post_id,
       post_data: user.posts[i].post_data,
       post_image: user.posts[i].post_image,
       post_date_time: user.posts[i].post_date_time,

@@ -4,7 +4,7 @@ import styles from "./Story.module.css";
 const StoryReel = () => {
   return (
     <>
-      <div className={styles.storyReel}>
+      <div className={styles.storyReel + " container"}>
         <Story
           profileSrc={`${process.env.PUBLIC_URL}/myavatar.jpg`}
           title="Shashank Yenurkar"

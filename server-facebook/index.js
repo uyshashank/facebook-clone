@@ -17,7 +17,7 @@ let dbConfig = require("./database/db_connection");
 let login = require('./Controllers/Login-Signup/Login');
 let signup = require("./Controllers/Login-Signup/Signup");
 let dashboard = require("./Controllers/App-Data/Dashboard");
-let userPosts = require("./Controllers/App-Data/UserPosts");
+let timelinePosts = require("./Controllers/App-Data/TimelinePosts");
 let userProfile = require("./Controllers/App-Data/UserProfile");
 let friendsSuggestion = require("./Controllers/App-Data/FriendsSuggestion");
 /**
@@ -34,7 +34,7 @@ app.use("/public", express.static(path.join(__dirname + "/public")));
 
 app.get("/dashboard/:user_email", dashboard.dashboardData);
 app.get("/userProfile/:user_email", userProfile.userProfile);
-app.get("/getPost/:user_email", userPosts.getPosts);
+app.get("/getPost/:user_email", timelinePosts.getPosts);
 app.get("/friends/suggestions", friendsSuggestion.friendsSuggestion);
 app.get("/friends/suggestions", friendsSuggestion.friendsSuggestion);
 
@@ -44,7 +44,7 @@ app.get("/friends/suggestions", friendsSuggestion.friendsSuggestion);
 
 app.post("/login", login.login);
 app.post("/signup", signup.signup);
-app.post("/savePost", userPosts.savePosts);
+app.post("/savePost", timelinePosts.savePosts);
 
 /**
  * * Lets Start the Server
