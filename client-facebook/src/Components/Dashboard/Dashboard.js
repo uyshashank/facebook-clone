@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import Sidebar from "../Dashboard/Sidebar";
+// import Sidebar from "../Dashboard/Sidebar";
 import axios from "axios";
 import Header from "../Header-Footer/Header";
 import Feed from "../Dashboard/Feed";

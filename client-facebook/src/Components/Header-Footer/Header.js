@@ -37,7 +37,7 @@ const Header = () => {
       {userData && (
         <nav className="navbar navbar-expand-lg bg-body-tertiary header">
           <div className="container-fluid">
-            <a className="navbar-brand" href="#">
+            <a className="navbar-brand" href="##">
               <img
                 width="40"
                 src="https://upload.wikimedia.org/wikipedia/commons/b/b8/2021_Facebook_icon.svg"
