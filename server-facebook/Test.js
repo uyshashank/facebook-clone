@@ -1,5 +1,12 @@
-const userSchema = require(__dirname + "\\config\\pathFile.js");
-// console.log(__dirname + "\\config\\pathFile.js")
-// const us = require(userSchema.userSchemaPath);
-const us = require(userSchema.userSchemaPath);
-console.log(us.test);
+const obj = {
+  fname: "Shashank",
+  lname: "Yenurkar",
+  brother: {
+    fname: "Kshitij",
+    test: "YEN",
+    lname: function () {
+      return this.fname;
+    },
+  },
+};
+console.log(obj.brother.lname);

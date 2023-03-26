@@ -14,7 +14,7 @@ let dbConfig = require("./database/db_connection");
 /**
  * * Route management libraries
  */
-let login = require('./Controllers/Login-Signup/Login');
+let login = require("./Controllers/Login-Signup/Login");
 let signup = require("./Controllers/Login-Signup/Signup");
 let dashboard = require("./Controllers/App-Data/Dashboard");
 let timelinePosts = require("./Controllers/App-Data/TimelinePosts");
@@ -35,8 +35,9 @@ app.use("/public", express.static(path.join(__dirname + "/public")));
 app.get("/dashboard/:user_email", dashboard.dashboardData);
 app.get("/userProfile/:user_email", userProfile.userProfile);
 app.get("/getPost/:user_email", timelinePosts.getPosts);
+app.get("/timeline/:user_email", timelinePosts.getTimeline);
 app.get("/friends/suggestions", friendsSuggestion.friendsSuggestion);
-app.get("/friends/suggestions", friendsSuggestion.friendsSuggestion);
+app.get("/getProfilePic/:user_email", userProfile.getProfilePic);
 
 /**
  * * POST Request Routes

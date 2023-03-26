@@ -27,11 +27,19 @@ let userSchema = new Schema(
     posts: [
       {
         post_id: { type: Number },
+        post_owner_name: {
+          type: String,
+          default: function () {
+            return this.user_fname;
+          },
+        },
+        post_owner_test: { type: String, default: "TEST" },
         post_date_time: { type: Date, default: Date.now },
         post_owner: { type: String },
         post_data: { type: String },
       },
     ],
+    friendsList: [],
   },
   {
     collection: "facebook-clone-collection",

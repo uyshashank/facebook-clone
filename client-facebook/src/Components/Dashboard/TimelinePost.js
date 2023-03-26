@@ -6,11 +6,13 @@ import ThumbUpAltOutlinedIcon from "@mui/icons-material/ThumbUpAltOutlined";
 // import ThumbUpAltIcon from '@mui/icons-material/ThumbUpAlt';
 import ChatOutlinedIcon from "@mui/icons-material/ChatOutlined";
 import SendOutlinedIcon from "@mui/icons-material/SendOutlined";
+// import ProfilePic from "../UI/ProfilePic";
 const TimelinePost = (props) => {
+  console.log(props);
   const userPostImage = `https://images.pexels.com/photos/627718/pexels-photo-627718.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1`;
 
   return (
-    <Fragment>
+    <Fragment>      
       <div className={"container px-0 " + styles.userpost}>
         <div className="row">
           <div className="col-10">
