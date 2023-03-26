@@ -6,26 +6,24 @@ import ThumbUpAltOutlinedIcon from "@mui/icons-material/ThumbUpAltOutlined";
 // import ThumbUpAltIcon from '@mui/icons-material/ThumbUpAlt';
 import ChatOutlinedIcon from "@mui/icons-material/ChatOutlined";
 import SendOutlinedIcon from "@mui/icons-material/SendOutlined";
-// import ProfilePic from "../UI/ProfilePic";
+import ProfilePic from "../UI/ProfilePic";
 const TimelinePost = (props) => {
-  console.log(props);
-  const userPostImage = `https://images.pexels.com/photos/627718/pexels-photo-627718.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1`;
-
   return (
-    <Fragment>      
+    <Fragment>
       <div className={"container px-0 " + styles.userpost}>
         <div className="row">
           <div className="col-10">
             <CardHeader
               avatar={
-                <Avatar
-                  src={
-                    `http://localhost:4000/public/profpics/` +
-                    props.user_profile
-                  }
-                />
+                // <Avatar
+                //   src={
+                //     `http://localhost:4000/public/profpics/` +
+                //     props.user_profile
+                //   }
+                // />
+                <ProfilePic userEmail={props.post_owner_email} />
               }
-              title={props.user_name_fname + " " + props.user_name_lname}
+              title={props.post_owner_name}
             />
           </div>
           <div className="col-1">
@@ -45,11 +43,7 @@ const TimelinePost = (props) => {
             </div>
             <div className="col-12 p-0 text-center">
               {props.post_image && (
-                <img
-                  className={styles.testPost}
-                  src={userPostImage}
-                  alt="User Post"
-                />
+                <img className={styles.testPost} src="" alt="User Post" />
               )}
             </div>
           </div>

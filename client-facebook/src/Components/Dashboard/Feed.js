@@ -2,7 +2,7 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import MessageSender from "../Dashboard/MessageSender";
 import StoryReel from "../Story/StoryReel";
-import ProfilePic from "../UI/ProfilePic";
+// import ProfilePic from "../UI/ProfilePic";
 import TimelinePost from "./TimelinePost";
 const Feed = (props) => {
   const userLoggedIn = localStorage.getItem("userLoggedIn");
@@ -12,7 +12,6 @@ const Feed = (props) => {
       .get("http://localhost:4000/timeline/" + userLoggedIn)
       .then((fetchedData) => {
         setTimeLinePost(fetchedData.data);
-        console.log(fetchedData.data);
       })
       .catch((err) => {
         console.log("Data fetch failed ");
@@ -23,19 +22,20 @@ const Feed = (props) => {
       <div className="feed">
         <StoryReel />
         <MessageSender propsData={props.propsData} />
-        
-        {/* {timeLinePost &&
+
+        {timeLinePost &&
           timeLinePost.map((data) => {
             return (
               <TimelinePost
-                key={data.posts}
-                post_data={data.posts}
-                user_name_fname={data.user_fname}
-                user_name_lname={data.user_lname}
-                user_profile={data.profile_details.prof_pic}
+                key={data.post_id+data.post_owner_email}
+                post_data={data.post_data}
+                post_owner_name={data.post_owner_name}
+                post_owner_email={data.post_owner_email}
+                post_likes_count={data.post_likes_count}
+                post_date_time={data.post_date_time}
               />
             );
-          })} */}
+          })}
       </div>
     </>
   );

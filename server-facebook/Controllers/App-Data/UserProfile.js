@@ -17,7 +17,7 @@ const userProfile = async (req, res) => {
 
 const getProfilePic = async (req, res) => {
   const userEmail = req.params.user_email;
-  let profilePic = await userSchema.findOne({ user_email: userEmail }, "profile_details.prof_pic");
+  let profilePic = await userSchema.findOne({ user_email: userEmail }, "profile_details.prof_pic");  
   return res.status(200).json(profilePic.profile_details);
 };
 

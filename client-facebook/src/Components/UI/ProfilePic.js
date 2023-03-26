@@ -18,7 +18,7 @@ const ProfilePic = (props) => {
   return (
     <Fragment>
       {profilePic && (
-        <Avatar src={`http://localhost:4000/public/profpics/` + profilePic} />
+        <Avatar src={`http://localhost:4000` + profilePic} />
       )}
     </Fragment>
   );

@@ -41,13 +41,6 @@ const getPosts = async (req, res) => {
 };
 
 const getTimeline = async (req, res) => {
-  /**
-   * user_fname,
-    user_lname,
-    post_data,
-    post_time,
-    post_owner
-   */
   const userEmail = req.params.user_email;
   let user = await userSchema.findOne({ user_email: userEmail });
   let userFriendsList = user.friendsList;
@@ -58,7 +51,7 @@ const getTimeline = async (req, res) => {
       { user_email: userFriendsList[i] },
       "posts"
     );
-    timelineData.push(friend);
+    timelineData.push(...friend.posts);
   }
   res.status(200).json(timelineData);
 };
