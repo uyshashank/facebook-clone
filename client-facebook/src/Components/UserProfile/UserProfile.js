@@ -12,6 +12,7 @@ const UserProfile = () => {
       .get(`http://localhost:4000/userProfile/${userLoggedIn}`)
       .then((fetchedData) => {
         setProfileData(fetchedData.data.data);
+        console.log(fetchedData.data.data);
       })
       .catch((err) => {
         console.log("Fetching Data for Userprofile failed with error -> ", err);

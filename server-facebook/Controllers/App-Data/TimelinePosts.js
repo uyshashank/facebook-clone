@@ -5,16 +5,18 @@ const savePosts = async (req, res) => {
   try {
     if (!newPost) {
       console.log("Received Empty Object in Newpost from user!");
+    } else {
+      let user = await userSchema.findOne({ user_email: newPost.post_owner });
+      const newPostID = user.posts.length + 1;
+      user.profile_details.total_posts++;
+      newPost.post_id = newPostID;
+      newPost.post_owner_email = newPost.post_owner;
+      newPost.post_owner_name = user.user_fname + " " + user.user_lname;
+      user.posts.push(newPost);
+      const data = new userSchema(user);
+      await data.save();
     }
-    let user = await userSchema.findOne({ user_email: newPost.post_owner });
-    const newPostID = user.posts.length + 1;
-    user.profile_details.post_count++;
-    newPost.post_id = newPostID;
-    user.posts.push(newPost);
-    const data = new userSchema(user);
-    await data.save();
   } catch (error) {
-    console.log(error);
     return res.status(500).json({ error });
   }
   return res.status(200).json({ message: "Message Posted" });
@@ -54,11 +56,10 @@ const getTimeline = async (req, res) => {
   for (let i = 0; i < userFriendsList.length; i++) {
     friend = await userSchema.findOne(
       { user_email: userFriendsList[i] },
-      "posts.post_id posts.post_data posts.post_date_time user_fname user_lname profile_details.prof_pic"
+      "posts"
     );
-    timelineData.push(friend);    
+    timelineData.push(friend);
   }
-  console.log(timelineData);
   res.status(200).json(timelineData);
 };
 

@@ -7,10 +7,10 @@ const login = async (req, res) => {
     if (user) {
       return res.status(200).json({ userEmail: req.body.email });
     } else {
-      return res.status(500).json({ error: "Wrong password!" });
+      return res.status(404).json({ error: "Wrong password!" });
     }
   } else {
-    return res.status(500).json({ error: "Invalid email!" });
+    return res.status(404).json({ error: "Account not found!" });
   }
 };
 

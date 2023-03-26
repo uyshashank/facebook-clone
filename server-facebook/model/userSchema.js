@@ -21,21 +21,16 @@ let userSchema = new Schema(
       prof_pic: { type: String, default: "/public/profpics/avatar.jpg" },
       cover_pic: { type: String, default: "/public/coverpics/avatar.jpg" },
       total_friends: { type: Number, default: 0 },
-      post_count: { type: Number },
+      total_posts: { type: Number , default: 0 },
       joining_date: { type: Date, default: Date.now },
     },
     posts: [
       {
         post_id: { type: Number },
-        post_owner_name: {
-          type: String,
-          default: function () {
-            return this.user_fname;
-          },
-        },
-        post_owner_test: { type: String, default: "TEST" },
+        post_likes_count: { type: Number, default: 0 },
         post_date_time: { type: Date, default: Date.now },
-        post_owner: { type: String },
+        post_owner_email: { type: String },
+        post_owner_name: { type: String },
         post_data: { type: String },
       },
     ],
